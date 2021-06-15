@@ -1,0 +1,11 @@
+<a href="{% url 'homepage' %}">Home |</a>
+<a href="/boast">Boast Posts |</a>
+<a href="/roast">Roast Posts |</a>
+<a href="/votes">Highest Votes |</a>
+<a href="/subpost">Make a Post |</a>
+<form method="post">
+  {% csrf_token %}
+  {{ to_post.as_p }}
+  <input type="submit" value="Submit">
+
+</form>

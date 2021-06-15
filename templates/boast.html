@@ -1,0 +1,12 @@
+<a href="{% url 'homepage' %}">Home |</a>
+<a href="/boast">Boast Posts |</a>
+<a href="/roast">Roast Posts |</a>
+<a href="/votes">Highest Votes |</a>
+<a href="/subpost">Make a Post |</a>
+{% for b in boast %}
+<p>{{ b.text }}
+<p>{{ b.time_posted }}</p>
+<p>{{ b.up }} <button><a href="/upvote/{{ b.id }}/">Up Vote </a></button>{{ b.down}} <button><a
+            href="/downvote/{{ b.id }}/">Down
+            Vote </a></button></p>
+{% endfor %}
